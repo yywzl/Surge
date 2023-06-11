@@ -185,3 +185,15 @@ DOMAIN-SUFFIX,twitter.com
 DOMAIN-SUFFIX,twitter.jp
 DOMAIN-SUFFIX,vine.co
 DOMAIN-KEYWORD,twitter
+# qit
+DOMAIN-SUFFIX,tw
+DOMAIN-SUFFIX,ampproject.org
+DOMAIN-KEYWORD,gmail
+DOMAIN-KEYWORD,instagram
+DOMAIN-KEYWORD,dropbox
+DOMAIN-KEYWORD,blogspot
+DOMAIN-SUFFIX,oculuscdn.com
+DOMAIN-SUFFIX,oculus.com
+DOMAIN-KEYWORD,whatsapp
+DOMAIN-SUFFIX,letsencrypt.org
+DOMAIN-SUFFIX,android.com

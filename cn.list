@@ -192,6 +192,15 @@ DOMAIN-SUFFIX,cn
 #DOMAIN-KEYWORD,-cn
 # DOMAIN-SUFFIX,nssurge.com
 # DOMAIN-SUFFIX,cdn.jsdelivr.net
+# China Apps
+USER-AGENT,MicroMessenger Client
+USER-AGENT,WeChat*
+USER-AGENT,MApi* // Dianping
+# Ali
+DOMAIN-KEYWORD,.tmall.
+IP-CIDR,198.11.188.0/25,no-resolve
+IP-CIDR,198.11.136.0/24,no-resolve
+USER-AGENT,%E6%89%8B%E6%9C%BA%E6%B7%98%E5%AE%9D*
 # Wechat cmcc 
 # IP-CIDR,36.128.0.0/10,no-resolve
 # IP-CIDR,42.187.128.0/17,no-resolve

@@ -54,7 +54,6 @@ DOMAIN-SUFFIX,ad.weibo.com
 DOMAIN-SUFFIX,adstrategy.biz.weibo.com
 #DOMAIN-SUFFIX,s.weibo.com
 DOMAIN-SUFFIX,vs.biz.weibo.com
-#
 DOMAIN-SUFFIX,ad.xiaomi.com
 DOMAIN-SUFFIX,ad.intl.xiaomi.com
 DOMAIN-SUFFIX,switch.cup.com.cn
@@ -68,7 +67,7 @@ DOMAIN-SUFFIX,p6-ad-sign.byteimg.com
 DOMAIN-SUFFIX,p3.pstatp.com
 DOMAIN-SUFFIX,pgdt.gtimg.cn
 DOMAIN-SUFFIX,pgdt.gtimg.com
-#cpu-x ...
+#cpu-x 
 DOMAIN-SUFFIX,doubleclick.net
 DOMAIN-SUFFIX,doubleclick-cn.net
 DOMAIN,google.com.miaozhen.com

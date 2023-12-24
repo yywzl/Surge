@@ -259,6 +259,13 @@ DOMAIN-SUFFIX,ipv6-test.com
 DOMAIN-SUFFIX,iqiyi.com
 DOMAIN-SUFFIX,iqiyipic.com
 DOMAIN-SUFFIX,ithome.com
+DOMAIN,pan.dumpapp.com
+DOMAIN-SUFFIX,aipanxiaozhan.com
+DOMAIN-SUFFIX,youdao.com
+DOMAIN-SUFFIX,ruanmei.com
+DOMAIN-SUFFIX,qishui.com
+DOMAIN-SUFFIX,bytedance.net
+DOMAIN-SUFFIX,huoshanimg.com
 DOMAIN-SUFFIX,jamanetwork.com
 DOMAIN-SUFFIX,java.com
 DOMAIN-SUFFIX,jhu.edu

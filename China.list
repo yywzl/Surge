@@ -1,8 +1,29 @@
-# Baidu/iqiyi
+# Baidu
 DOMAIN-SUFFIX,baidu.com
 DOMAIN-SUFFIX,baidubcr.com
 DOMAIN-SUFFIX,bdstatic.com
-DOMAIN-SUFFIX,yunjiasu-cdn.net
+DOMAIN-SUFFIX,bdimg.com
+DOMAIN-SUFFIX,bcebos.com
+DOMAIN-SUFFIX,mmstat.com
+DOMAIN-SUFFIX,10086.cn
+DOMAIN-SUFFIX,sinaimg.cn
+DOMAIN-SUFFIX,gitclone.com
+DOMAIN-SUFFIX,skk.moe
+DOMAIN-SUFFIX,pusher.com
+DOMAIN-SUFFIX,inftab.com
+DOMAIN-SUFFIX,infinitynewtab.com
+DOMAIN-SUFFIX,chinamobile.com
+DOMAIN-SUFFIX,alookweb.com
+DOMAIN-SUFFIX,yangkeduo.com
+DOMAIN-SUFFIX,gcloudcs.com
+DOMAIN-SUFFIX,freenom.com
+DOMAIN-SUFFIX,revenuecat.com
+DOMAIN-SUFFIX,pki.goog
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,globalsign.com
+DOMAIN-SUFFIX,cmpassport.com
+DOMAIN-SUFFIX,ucweb.com
+DOMAIN-SUFFIX,sinilink.com
 # jd            
 DOMAIN-SUFFIX,1huizhan.com
 DOMAIN-SUFFIX,3.cn

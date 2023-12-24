@@ -60,6 +60,14 @@ DOMAIN-SUFFIX,epg.112114.xyz
 DOMAIN-SUFFIX,koowo.com
 DOMAIN-SUFFIX,kugou.com
 DOMAIN-SUFFIX,kuwo.cn
+# bili
+DOMAIN-SUFFIX,biliapi.com
+DOMAIN-SUFFIX,biliapi.net
+DOMAIN-SUFFIX,bilibili.com
+DOMAIN-SUFFIX,bilibili.tv
+DOMAIN-SUFFIX,bilivideo.com
+DOMAIN-SUFFIX,biligame.com
+DOMAIN-SUFFIX,bstarstatic.com
 # Alibaba
 DOMAIN-SUFFIX,taobao.com
 DOMAIN-SUFFIX,alicdn.com
@@ -138,10 +146,6 @@ DOMAIN-SUFFIX,baduziyuan.com
 DOMAIN-SUFFIX,battle.net
 DOMAIN-SUFFIX,bdatu.com
 DOMAIN-SUFFIX,beitaichufang.com
-DOMAIN-SUFFIX,biliapi.com
-DOMAIN-SUFFIX,biliapi.net
-DOMAIN-SUFFIX,bilibili.com
-DOMAIN-SUFFIX,bilibili.tv
 DOMAIN-SUFFIX,bjango.com
 DOMAIN-SUFFIX,blizzard.com
 DOMAIN-SUFFIX,bmj.com

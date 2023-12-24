@@ -3,18 +3,63 @@ DOMAIN-SUFFIX,baidu.com
 DOMAIN-SUFFIX,baidubcr.com
 DOMAIN-SUFFIX,bdstatic.com
 DOMAIN-SUFFIX,yunjiasu-cdn.net
-# douyin
-DOMAIN-SUFFIX,amemv.com
-DOMAIN-SUFFIX,douyincdn.com
-DOMAIN-SUFFIX,douyinpic.com
-DOMAIN-SUFFIX,douyinstatic.com
-DOMAIN-SUFFIX,douyinvod.com
-DOMAIN-SUFFIX,idouyinvod.com
-DOMAIN-SUFFIX,ixigua.com
-DOMAIN-SUFFIX,ixiguavideo.com
-DOMAIN-SUFFIX,pstatp.com
+# jd            
+DOMAIN-SUFFIX,1huizhan.com
+DOMAIN-SUFFIX,3.cn
+DOMAIN-SUFFIX,300hu.com
+DOMAIN-SUFFIX,360buy.cn
+DOMAIN-SUFFIX,360buy.com
+DOMAIN-SUFFIX,360buy.com.cn
+DOMAIN-SUFFIX,360buyimg.com
+DOMAIN-SUFFIX,360buyinternational.com
+DOMAIN-SUFFIX,360top.com
+DOMAIN-SUFFIX,jingdong.com
+DOMAIN-SUFFIX,jingdongjinrong.com
+DOMAIN-SUFFIX,7fresh.com
+DOMAIN-SUFFIX,baitiao.cn
+DOMAIN-SUFFIX,baitiao.com
+DOMAIN-SUFFIX,jd.com
+DOMAIN-SUFFIX,jd.hk
+DOMAIN-SUFFIX,jdpay.com
+DOMAIN-SUFFIX,pddpic.com
+# dy
+DOMAIN-SUFFIX,zjurl.cn
+DOMAIN-SUFFIX,bytescm.com
+DOMAIN-SUFFIX,bsccdn.net
+DOMAIN-SUFFIX,bytetos.com
+DOMAIN-SUFFIX,static.com
+DOMAIN-SUFFIX,bytegecko.com
+DOMAIN-SUFFIX,bdurl.net
 DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,toutiao.com
+DOMAIN-SUFFIX,kuiniuca.com
+DOMAIN-SUFFIX,zijieapi.com
+DOMAIN-SUFFIX,awemeughun.com
+DOMAIN-SUFFIX,amemv.com
+DOMAIN-SUFFIX,ecombdapi.com
+DOMAIN-SUFFIX,xycdn.com
+DOMAIN-SUFFIX,pstatp.com
+DOMAIN-SUFFIX,bytemaimg.com
+DOMAIN-SUFFIX,ibytedapm.com
+DOMAIN-SUFFIX,byteactivity.com
+DOMAIN-SUFFIX,bytedance.com
+DOMAIN-SUFFIX,byteeffecttos.com
+DOMAIN-SUFFIX,bytednsdoc.com
+DOMAIN-SUFFIX,baike.com
+DOMAIN-SUFFIX,ksyuncdn.com
+DOMAIN-SUFFIX,oceanengine.com
+DOMAIN-SUFFIX,oceanengine.com
+DOMAIN-SUFFIX,volcsirius.com
+DOMAIN-SUFFIX,ecombdstatic.com
+DOMAIN-SUFFIX,byteimg.com
+DOMAIN-SUFFIX,miaozhen.com
+DOMAIN-SUFFIX,ndcpp.com
+# aptv
+DOMAIN-SUFFIX,o.lencr.org
+DOMAIN-SUFFIX,epg.112114.xyz
+# kuwo
+DOMAIN-SUFFIX,koowo.com
+DOMAIN-SUFFIX,kugou.com
+DOMAIN-SUFFIX,kuwo.cn
 # Alibaba
 DOMAIN-SUFFIX,taobao.com
 DOMAIN-SUFFIX,alicdn.com
@@ -191,9 +236,6 @@ DOMAIN-SUFFIX,iqiyipic.com
 DOMAIN-SUFFIX,ithome.com
 DOMAIN-SUFFIX,jamanetwork.com
 DOMAIN-SUFFIX,java.com
-DOMAIN-SUFFIX,jd.com
-DOMAIN-SUFFIX,jd.hk
-DOMAIN-SUFFIX,jdpay.com
 DOMAIN-SUFFIX,jhu.edu
 DOMAIN-SUFFIX,jidian.im
 DOMAIN-SUFFIX,jpopsuki.eu

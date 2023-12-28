@@ -1,0 +1,6 @@
+#!name= 瑟瑟视频
+#!desc= 瑟瑟视频净化，去除所有广告
+[Script]
+瑟瑟视频 = type=http-response, pattern=^https?:\/\/(files\.(yuchenglw|honghufly)\.com|(os\.privacypolicie|ss\.osupdate|cdn\.privacypolicie)\.net), script-path=https://raw.githubusercontent.com/chxm1023/Advertising/main/sssp.js
+[MITM]
+hostname = %APPEND% files.*.com, os.privacypolicie.net, ss.osupdate.net

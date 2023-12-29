@@ -4,8 +4,6 @@ DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,discord.com
-DOMAIN-SUFFIX,olevod.com
-DOMAIN-SUFFIX,olemovienews.com
 DOMAIN-SUFFIX,haiwaikan.com
 DOMAIN-SUFFIX,bfvvs.com
 DOMAIN-SUFFIX,cdn.venus7202.com
@@ -18,3 +16,6 @@ DOMAIN-SUFFIX,ibb.co
 DOMAIN-SUFFIX,kin6c1.com
 DOMAIN-SUFFIX,iz8qkg.com
 DOMAIN-SUFFIX,kin6c1.com
+DOMAIN-keyword,olevod
+DOMAIN-keyword,olelive
+DOMAIN-keyword,olemovienews

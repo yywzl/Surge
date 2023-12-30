@@ -1,0 +1,8 @@
+#!name=uua解锁会员
+#!desc=uua
+
+[MITM]
+hostname = %APPEND% *.uaa*.com
+
+[Script]
+uua = type=http-response, pattern=^https?:\/\/(api|m)\.uaa.*\.com, script-path=https://raw.githubusercontent.com/chxm1023/Rewrite/main/uua.js, requires-body=true, max-size=-1, timeout=60

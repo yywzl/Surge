@@ -1,4 +1,5 @@
 #!name=NYFM 解锁会员
+#!author = ios151
 #!desc=NYFM 解锁会员
 [Script]
 NYFM = type=http-response, pattern=^https:\/\/buy\.itunes\.apple\.com\/verifyReceipt, script-path=https://raw.githubusercontent.com/Yu9191/Rewrite/main/itunes/NYFM.js

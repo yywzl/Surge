@@ -1,5 +1,6 @@
-#!name=uua解锁会员
-#!desc=uua
+#!name= uua解锁会员
+#!author= chxm1023
+#!desc= uua 网站解锁会员
 
 [MITM]
 hostname = %APPEND% *.uaa*.com

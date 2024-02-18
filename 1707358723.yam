@@ -5,23 +5,23 @@ mode: Rule
 log-level: info
 external-controller: :9090
 proxies:
-  - {name: 🇭🇰 香港 01, server: miajose.bygcloud.xyz, port: 21101, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇭🇰 香港 02, server: miajose.bygcloud.xyz, port: 21102, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇭🇰 香港 03, server: miajose.bygcloud.xyz, port: 21103, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇭🇰 香港 04, server: miajose.bygcloud.xyz, port: 21004, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇭🇰 香港 05, server: miajose.bygcloud.xyz, port: 21005, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇨🇳 台湾 01, server: miajose.bygcloud.xyz, port: 22001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇨🇳 台湾 02, server: miajose.bygcloud.xyz, port: 22002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇯🇵 日本 01, server: miajose.bygcloud.xyz, port: 24001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇯🇵 日本 02, server: miajose.bygcloud.xyz, port: 24002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇯🇵 日本 03, server: miajose.bygcloud.xyz, port: 24003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇸🇬 新加坡 01, server: miajose.bygcloud.xyz, port: 23001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇸🇬 新加坡 02, server: miajose.bygcloud.xyz, port: 23002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇸🇬 新加坡 03, server: miajose.bygcloud.xyz, port: 23003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇭🇰 香港 11, server: miajose.bygcloud.xyz, port: 21101, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇭🇰 香港 12, server: miajose.bygcloud.xyz, port: 21102, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇭🇰 香港 13, server: miajose.bygcloud.xyz, port: 21103, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇭🇰 香港 14, server: miajose.bygcloud.xyz, port: 21004, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇭🇰 香港 15, server: miajose.bygcloud.xyz, port: 21005, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇨🇳 台湾 11, server: miajose.bygcloud.xyz, port: 22001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇨🇳 台湾 12, server: miajose.bygcloud.xyz, port: 22002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇯🇵 日本 11, server: miajose.bygcloud.xyz, port: 24001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇯🇵 日本 12, server: miajose.bygcloud.xyz, port: 24002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇯🇵 日本 13, server: miajose.bygcloud.xyz, port: 24003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇸🇬 新加坡 11, server: miajose.bygcloud.xyz, port: 23001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇸🇬 新加坡 12, server: miajose.bygcloud.xyz, port: 23002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇸🇬 新加坡 13, server: miajose.bygcloud.xyz, port: 23003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
   - {name: 🇰🇷 韩国, server: miajose.bygcloud.xyz, port: 25001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇺🇸 美国 01, server: miajose.bygcloud.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇺🇸 美国 02, server: miajose.bygcloud.xyz, port: 26002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
-  - {name: 🇺🇸 美国 03, server: miajose.bygcloud.xyz, port: 26003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇺🇸 美国 11, server: miajose.bygcloud.xyz, port: 26001, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇺🇸 美国 12, server: miajose.bygcloud.xyz, port: 26002, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
+  - {name: 🇺🇸 美国 13, server: miajose.bygcloud.xyz, port: 26003, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
   - {name: 🇨🇦 加拿大, server: miajose.bygcloud.xyz, port: 27014, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
   - {name: 🇻🇳 越南, server: miajose.bygcloud.xyz, port: 27024, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}
   - {name: 🇲🇾 马来西亚, server: miajose.bygcloud.xyz, port: 27018, type: ss, cipher: aes-128-gcm, password: 796e10f7-af65-4d02-8fd2-5795cb161855, udp: true}

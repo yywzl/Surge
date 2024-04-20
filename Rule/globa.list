@@ -6278,3 +6278,9 @@ DOMAIN-SUFFIX,ocnttv.com
 # VikACG
 DOMAIN-SUFFIX,vikacg.com
 DOMAIN-SUFFIX,picjs.xyz
+# adobe
+DOMAIN-SUFFIX,adobe.com
+DOMAIN-SUFFIX,gstatic.com
+DOMAIN-SUFFIX,adobelogin.com
+DOMAIN-SUFFIX,adobe.io
+DOMAIN-SUFFIX,dlercloud.com

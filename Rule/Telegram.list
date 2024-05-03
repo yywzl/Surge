@@ -1,0 +1,40 @@
+DOMAIN,api.swiftgram.app
+DOMAIN-SUFFIX,comments.app
+DOMAIN-SUFFIX,contest.com
+DOMAIN-SUFFIX,graph.org
+DOMAIN-SUFFIX,legra.ph
+DOMAIN-SUFFIX,mbrx.app
+DOMAIN-SUFFIX,quiz.directory
+DOMAIN-SUFFIX,stel.com
+DOMAIN-SUFFIX,t.me
+DOMAIN-SUFFIX,tdesktop.com
+DOMAIN-SUFFIX,telega.one
+DOMAIN-SUFFIX,telegra.ph
+DOMAIN-SUFFIX,telesco.pe
+DOMAIN-SUFFIX,tg.dev
+DOMAIN-SUFFIX,tx.me
+DOMAIN-SUFFIX,usercontent.dev
+DOMAIN-KEYWORD,telegram
+DOMAIN-KEYWORD,nicegram
+DOMAIN,flora.web.telegram.org
+DOMAIN,flora-1.web.telegram.org
+DOMAIN,kws5.web.telegram.org
+DOMAIN,kws5-1.web.telegram.org
+DOMAIN,zws5.web.telegram.org
+DOMAIN,zws5-1.web.telegram.org
+DOMAIN-SUFFIX,telegram.me
+DOMAIN-SUFFIX,telegram.org
+DOMAIN-SUFFIX,telegram-cdn.org
+# 网络环境差时出站
+IP-CIDR,95.161.76.101/32,no-resolve
+# DC5
+IP-CIDR,91.108.16.0/22,no-resolve
+IP-CIDR,91.108.56.0/23,no-resolve
+IP-CIDR,149.154.168.0/22,no-resolve
+# DC5-V6
+IP-CIDR6,2001:b28:f23f::/48,no-resolve
+# DC5-ASN
+IP-ASN,62014,no-resolve
+PROCESS-NAME,nekox.messenger
+PROCESS-NAME,org.telegram.messenger
+PROCESS-NAME,telegram-desktop

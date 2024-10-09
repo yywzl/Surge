@@ -38,7 +38,7 @@ DOMAIN, v.20120714.xyz, 🚇自动策略
 DOMAIN, cdn.misakaf.org, DIRECT
 DOMAIN, emby.misakaf.org, 🚇自动策略
 DOMAIN, push-kr.misakaf.org, 🚇自动策略
-IP-CIDR, 102.223.180.108/32, Emby, no-resolve
+IP-CIDR, 102.223.180.108/32, 🚇自动策略, no-resolve
 
 # NMEmby
 DOMAIN, film.ohhhh.org, 🚇自动策略

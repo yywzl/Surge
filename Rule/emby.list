@@ -1,0 +1,54 @@
+#!name = Emby Filter
+#!desc = Emby服务器分流。
+#!author = RuCu6[https://github.com/RuCu6]
+#!icon = https://raw.githubusercontent.com/RuCu6/Loon/main/Icons/app/emby.png
+#!date = 2024-10-03 02:20
+
+# 江湖
+DOMAIN-SUFFIX, reddust.link, 🚇自动策略
+
+# 垃圾影音
+DOMAIN, cf.emby.moe, 🚇自动策略
+DOMAIN, cf.xmsl.org, 🚇自动策略
+
+# 普拉斯影业
+DOMAIN, emby-best.xeton.dev, DIRECT
+DOMAIN, emby-cf.plusmedia.site, 🚇自动策略
+DOMAIN, emby.plusmedia.site, 🚇自动策略
+DOMAIN, emby.xeton.dev, 🚇自动策略
+DOMAIN, jellyfin.xeton.dev, 🚇自动策略
+DOMAIN, movie.xeton.dev, 🚇自动策略
+DOMAIN, servers.xeton.dev, 🚇自动策略
+
+# 叔服
+DOMAIN, emby3.mcjoker.xyz,🚇自动策略
+DOMAIN, jz.mcjoker.xyz, DIRECT
+
+# 私房菜
+DOMAIN, notnetflix.cos.cat, 🚇自动策略
+
+# Lend
+DOMAIN, emby.lcloud.wiki, 🚇自动策略
+
+# Marmot
+DOMAIN, v.20120714.xyz, 🚇自动策略
+
+# MisakaF
+DOMAIN, cdn.misakaf.org, DIRECT
+DOMAIN, emby.misakaf.org, 🚇自动策略
+DOMAIN, push-kr.misakaf.org, 🚇自动策略
+IP-CIDR, 102.223.180.108/32, Emby, no-resolve
+
+# NMEmby
+DOMAIN, film.ohhhh.org, 🚇自动策略
+
+# Temby
+DOMAIN, temby.285286.xyz, 🚇自动策略
+DOMAIN, temby4837.285286.xyz, 🚇自动策略
+
+# TreeDiagram
+DOMAIN, 789.123456.al, 🚇自动策略
+
+# ntRRR
+DOMAIN, stream.ntrrr.top, 🚇自动策略
+DOMAIN, stream.synn.cc, 🚇自动策略

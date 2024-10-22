@@ -5,7 +5,7 @@
 #!date=2024-10-19 22:45
 
 [Rule]
-AND, ((URL-REGEX, ^http:\/\/(?:[\d\.]+|amdc\.m\.taobao\.com)\/amdc\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
+AND, ((URL-REGEX, ^http:\/\/.+\/mobileDispatch), (USER-AGENT, AMapiPhone*)), REJECT
 
 [Map Local]
 # 导航详情页 - 路线规划、地点详情页、搜索详情页、导航结束页

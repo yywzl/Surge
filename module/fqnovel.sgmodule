@@ -1,0 +1,68 @@
+[Rule]
+# > fqnovel
+IP-CIDR,110.249.199.75/32,REJECT
+IP-CIDR,111.225.147.191/32,REJECT
+IP-CIDR,111.63.61.101/32,REJECT
+IP-CIDR,220.243.141.0/32,REJECT
+DOMAIN-SUFFIX,dig.bdurl.net,REJECT
+DOMAIN-SUFFIX,dig.zjurl.cn,REJECT
+DOMAIN-SUFFIX,if-analytics.bytescm.com,REJECT
+DOMAIN-SUFFIX,lf-analytics.bytescm.com,REJECT
+DOMAIN-SUFFIX,lf-cdn-tos.bytescm.com,REJECT
+DOMAIN-SUFFIX,if-cdn-tos.bytescm.com,REJECT
+DOMAIN-SUFFIX,content-open.douyin.com,REJECT
+DOMAIN-SUFFIX,webcast-open.douyin.com,REJECT
+DOMAIN-SUFFIX,webcast5-open-lq.douyin.com,REJECT
+DOMAIN-SUFFIX,webcast5-open-lf.douyin.com,REJECT
+DOMAIN-SUFFIX,p3-webcast-sign.douyinpic.com,REJECT
+DOMAIN-SUFFIX,p6-webcast-sign.douyinpic.com,REJECT
+DOMAIN-KEYWORD,-ad-sign.byteimg.com,REJECT
+DOMAIN-KEYWORD,-ad.byteoversea.com,REJECT
+# toutiao
+DOMAIN-SUFFIX,dsp.toutiao.com,REJECT
+DOMAIN-SUFFIX,ad.toutiao.com,REJECT
+DOMAIN-SUFFIX,d.toutiao.com,REJECT
+DOMAIN-SUFFIX,mon.toutiaocloud.com,REJECT
+DOMAIN-SUFFIX,pangolin-dsp-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-dsp-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao-b.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao.com,REJECT
+DOMAIN-SUFFIX,pangolin-sdk-toutiao1.com,REJECT
+DOMAIN-SUFFIX,pglstatp-toutiao.com,REJECT
+# zijieapi
+DOMAIN-SUFFIX,ma5-normal-hl.zijieapi.com,REJECT
+DOMAIN-SUFFIX,minigame5-normal.zijieapi.com,REJECT
+DOMAIN-SUFFIX,minigame3-normal.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ads5-normal.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ads3-normal.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ads5-normal-lq.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ads3-normal-lq.zijieapi.com,REJECT
+DOMAIN-SUFFIX,applog.zijieapi.com,REJECT
+DOMAIN-SUFFIX,log.zijieapi.com,REJECT
+DOMAIN-SUFFIX,timon.zijieapi.com,REJECT
+DOMAIN-SUFFIX,mon.zijieapi.com,REJECT
+DOMAIN-SUFFIX,ad.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc0-bjlgy.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc3-aliec2.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc3-aliec1.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc3-alisc1.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc3-alisc2.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc0-aliec2.zijieapi.com,REJECT
+DOMAIN-SUFFIX,tnc0-alisc1.zijieapi.com,REJECT
+# pstatp
+DOMAIN-SUFFIX,dm.pstatp.com,REJECT
+DOMAIN-SUFFIX,s3a.pstatp.com,REJECT
+# volces
+DOMAIN-SUFFIX,mssdk.volces.com,REJECT
+DOMAIN-SUFFIX,apmplus.volces.com,REJECT
+DOMAIN-SUFFIX,toblog.volceapplog.com,REJECT
+# snssdk
+DOMAIN-SUFFIX,is.snssdk.com,REJECT
+DOMAIN-SUFFIX,i.snssdk.com,REJECT
+DOMAIN-SUFFIX,pangolin.snssdk.com,REJECT
+DOMAIN-SUFFIX,log.snssdk.com,REJECT
+DOMAIN-SUFFIX,toblog.ctobsnssdk.com,REJECT
+DOMAIN-SUFFIX,bds.snssdk.com,REJECT
+DOMAIN-SUFFIX,tnc3-alisc1.snssdk.com,REJECT
+DOMAIN-SUFFIX,tnc3-bjlgy.snssdk.com,REJECT
+DOMAIN-SUFFIX,tnc3-aliec2.snssdk.com,REJECT

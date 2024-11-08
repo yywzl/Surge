@@ -4,10 +4,10 @@
 #!date=2024-11-7 12:49:38
 [Rule]
 # > fqnovel
-IP-CIDR,110.249.199.75/32,REJECT,no-resolve
-IP-CIDR,111.225.147.191/32,REJECT,no-resolve
-IP-CIDR,111.63.61.101/32,REJECT,no-resolve
-IP-CIDR,220.243.141.0/32,REJECT,no-resolve
+IP-CIDR,110.249.199.75/32,REJECT,pre-matching,no-resolve
+IP-CIDR,111.225.147.191/32,REJECT,pre-matching,no-resolve
+IP-CIDR,111.63.61.101/32,REJECT,pre-matching,no-resolve
+IP-CIDR,220.243.141.0/32,REJECT,pre-matching,no-resolve
 DOMAIN-SUFFIX,dig.bdurl.net,REJECT
 DOMAIN-SUFFIX,dig.zjurl.cn,REJECT
 DOMAIN-SUFFIX,if-analytics.bytescm.com,REJECT

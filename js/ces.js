@@ -1,174 +1,155 @@
-const UA = 'Mozilla/5.0 (iPhone; CPU iPhone OS 18_2 like Mac OS X) AppleWebKit/604.1.14 (KHTML, like Gecko)';
 const cheerio = createCheerio();
 
-/*
-{	
-    "enload": true
-}
-*/
-let $config = argsify($config_str);
+// 设置User Agent，模拟浏览器
+const UA = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36 Edg/131.0.0.0';
 
-// ======================== 1. 应用配置（基于原JSON转换）========================
-const appConfig = {
+// 应用配置（基于91pron.men JSON转换）
+let appConfig = {
     ver: 1,
-    title: 'motv',
-    site: 'https://motv.app',
+    title: '91pron',
+    site: 'https://91pron.men',
     tabs: [
-        { name: '日本有码', ui: 1, ext: { id: '20-----------' } }, // 对应原分类url0的核心ID
-        { name: '日本无码', ui: 1, ext: { id: '50-----------' } },
-        { name: '国产', ui: 1, ext: { id: '41-----------' } }
+        { name: '成人自拍', ui: 1, ext: { url: 'https://91pron.men/vodtype/6.html' } },
+        { name: '91视频', ui: 1, ext: { url: 'https://91pron.men/vodtype/8.html' } },
+        { name: '伦理', ui: 1, ext: { url: 'https://91pron.men/vodtype/9.html' } },
+        { name: '无码', ui: 1, ext: { url: 'https://91pron.men/vodtype/23.html' } },
+        { name: '中文字幕', ui: 1, ext: { url: 'https://91pron.men/vodtype/21.html' } },
+        { name: 'fc2', ui: 1, ext: { url: 'https://91pron.men/vodtype/22.html' } },
+        { name: '麻豆传媒', ui: 1, ext: { url: 'https://91pron.men/vodtype/13.html' } },
+        { name: '糖心', ui: 1, ext: { url: 'https://91pron.men/vodtype/14.html' } }
     ],
 };
 
-// ======================== 2. 常量配置（简化维护）========================
-const CONFIG = {
-    SELECTORS: {
-        videoItem: 'div.movie-list-body.flex div.movie-list-item', // 分类视频节点
-        searchVideoItem: 'div.movie-list-body.flex div.vod-search-list', // 搜索视频节点
-        videoTitle: 'div.movie-title', // 视频标题
-        videoCover: 'div.movie-post-lazyload', // 封面图（data-original属性）
-        videoLink: 'a', // 视频链接（href属性）
-        // 原JSON无评分/时长，暂不添加
-    },
-    URL: {
-        category: 'https://motv.app/vodshow/{id}--------{pg}---/', // 分类分页URL模板
-        searchFirst: 'https://motv.app/vodsearch/-------------/?wd={wd}', // 搜索第一页
-        searchOther: 'https://motv.app/vodsearch/{wd}----------{pg}---/' // 搜索分页
-    },
-    ERROR_MESSAGES: {
-        noData: '暂无数据'
-    }
-};
-
-// ======================== 3. 工具函数（统一请求处理）========================
-async function fetchWithRetry(url) {
-    try {
-        const { data } = await $fetch.get(url, { headers: { 'User-Agent': UA } });
-        // 反爬拦截（如需要）
-        if (data.includes('Just a moment...')) {
-            $utils.openSafari(url, UA);
-            return null;
-        }
-        return data;
-    } catch (err) {
-        console.error(`请求失败：${err.message}`);
-        return null;
-    }
-}
-
-// ======================== 4. 女优收藏（原JSON无此功能，保留空实现兼容格式）========================
-async function getactress() {
-    return []; // motv配置无收藏功能，返回空列表
-}
-
-// ======================== 5. 配置获取（兼容enload参数）========================
+// 获取配置（返回分类列表供APP展示）
 async function getConfig() {
-    let config = { ...appConfig };
-    if ($config.enload) {
-        const actressList = await getactress();
-        config.tabs = config.tabs.concat(actressList);
-    }
+    let config = appConfig;
     return jsonify(config);
 }
 
-// ======================== 6. 视频列表解析（通用逻辑）========================
-function parseVideoList($, isSearch = false) {
-    const cards = [];
-    const $nodes = isSearch 
-        ? $(CONFIG.SELECTORS.searchVideoItem) 
-        : $(CONFIG.SELECTORS.videoItem);
+// 抓取分类视频列表
+async function getCards(ext) {
+    ext = argsify(ext);
+    let cards = [];
+    let { page = 1, url } = ext;
 
-    $nodes.each((_, e) => {
-        const $e = $(e);
-        const href = $e.find(CONFIG.SELECTORS.videoLink).attr('href') || '';
-        const title = $e.find(CONFIG.SELECTORS.videoTitle).text().trim().replace(/\s+/g, ' ') || '';
-        const cover = $e.find(CONFIG.SELECTORS.videoCover).attr('data-original') || '';
-        // 原JSON无备注/时长，设为空
-        const remarks = '';
-        const duration = '';
+    // 构造分页URL（适配原JSON的分页规则：第2页为 6-2.html 格式）
+    if (page > 1) {
+        url = url.replace('.html', `-${page}.html`);
+    }
+
+    const { data } = await $fetch.get(url, {
+        headers: { 'User-Agent': UA },
+    });
+
+    const $ = cheerio.load(data);
+
+    // 解析视频列表（对应原JSON的XPath规则）
+    $('.thumbnail.group').each((_, element) => {
+        const $element = $(element);
+        // 提取视频标题和链接
+        const $titleEl = $element.find('div.my-2.text-sm.text-nord4.truncate a');
+        const href = $titleEl.attr('href') || '';
+        const title = $titleEl.text().trim() || '';
+        // 提取封面图
+        const cover = $element.find('img').attr('src') || '';
+        // 原JSON无备注信息，设为空
+        const vod_remarks = '';
 
         if (href && title) {
             cards.push({
                 vod_id: href,
                 vod_name: title,
                 vod_pic: cover,
-                vod_remarks: remarks,
-                vod_duration: duration,
-                ext: { url: `${appConfig.site}${href}` } // 拼接完整详情页URL
+                vod_remarks: vod_remarks,
+                ext: { url: appConfig.site + href }, // 拼接完整详情页URL
             });
         }
     });
-    return cards;
-}
 
-// ======================== 7. 分类视频抓取（getCards）========================
-async function getCards(ext) {
-    ext = argsify(ext);
-    let cards = [];
-    let { page = 1, id } = ext;
-
-    // 构造分页URL（第一页page=1时，URL末尾为"-----------/"，对应原url0）
-    const url = CONFIG.URL.category.replace('{id}', id).replace('{pg}', page);
-    const data = await fetchWithRetry(url);
-    if (!data) return jsonify({ list: [] });
-
-    const $ = cheerio.load(data);
-    cards = parseVideoList($);
     return jsonify({ list: cards });
 }
 
-// ======================== 8. 播放链接提取（getTracks）========================
+// 提取播放链接（解析详情页，适配原JSON的play_regex）
 async function getTracks(ext) {
     ext = argsify(ext);
-    let url = ext.url;
     let tracks = [];
+    const url = ext.url;
 
-    // 原JSON的play_regex为Base64编码，解码后是："url":"(https?\[.*\]+)"（暂未找到具体播放API，此处适配通用m3u8逻辑）
-    const data = await fetchWithRetry(url);
-    if (!data) return jsonify({ list: [{ title: '默认分组', tracks }] });
+    // 从详情页URL提取视频ID（适配 91pron.men/vod/xxx.html 格式）
+    const match = url.match(/https?:\/\/91pron\.men\/vod\/(\w+)\.html/);
+    if (!match || !match[1]) return jsonify({ list: [{ title: '默认分组', tracks }] });
 
-    // 此处需根据motv实际播放链接规则调整，暂用占位逻辑（若有具体play API可替换）
-    // 示例：从详情页提取播放UUID，构造m3u8链接
-    const match = data.match(/playId="([^"]+)"/); // 假设播放ID在playId属性中
-    if (match && match[1]) {
-        const playUrl = `https://motv.app/api/play/${match[1]}/playlist.m3u8`;
-        tracks.push({
-            name: '自动',
-            pan: '',
-            ext: { url: playUrl }
-        });
-    }
+    const videoId = match[1];
+    // 构造播放接口（原JSON play_regex解码为"url":"(https?\[.*\]+)"，暂基于常见格式构造）
+    const playUrl = `https://91pron.men/api/play/${videoId}`;
+
+    tracks.push({
+        name: '播放',
+        pan: '',
+        ext: { url: playUrl },
+    });
 
     return jsonify({
-        list: [
-            { title: '默认分组', tracks }
-        ]
+        list: [{ title: '默认分组', tracks }],
     });
 }
 
-// ======================== 9. 播放信息获取（getPlayinfo）========================
+// 获取真实播放地址
 async function getPlayinfo(ext) {
     ext = argsify(ext);
     const url = ext.url;
-    return jsonify({ urls: [url] });
+    const { data } = await $fetch.get(url, {
+        headers: { 'User-Agent': UA },
+    });
+    const result = argsify(data);
+
+    // 提取播放链接（需根据实际API响应调整，此处适配常见JSON格式）
+    const playurl = result.playUrl || result.videoUrl || '';
+
+    return jsonify({ urls: [playurl], headers: [{ 'User-Agent': UA }] });
 }
 
-// ======================== 10. 搜索功能（search）========================
+// 搜索功能
 async function search(ext) {
     ext = argsify(ext);
     let cards = [];
     let text = encodeURIComponent(ext.text);
     let page = ext.page || 1;
 
-    // 构造搜索URL
-    const url = page === 1 
-        ? CONFIG.URL.searchFirst.replace('{wd}', text) 
-        : CONFIG.URL.searchOther.replace('{wd}', text).replace('{pg}', page);
+    // 构造搜索分页URL（适配原JSON规则）
+    let url;
+    if (page === 1) {
+        url = `${appConfig.site}/search.html?wd=${text}`;
+    } else {
+        url = `${appConfig.site}/search${text}/page/${page}.html`;
+    }
 
-    const data = await fetchWithRetry(url);
-    if (!data) return jsonify({ list: [] });
+    const { data } = await $fetch.get(url, {
+        headers: { 'User-Agent': UA },
+    });
 
     const $ = cheerio.load(data);
-    cards = parseVideoList($, true); // 标记为搜索结果
+
+    // 解析搜索结果（对应原JSON的search_vod_node规则）
+    $('div.my-2.text-sm.text-nord4.truncate').each((_, element) => {
+        const $element = $(element);
+        const $titleEl = $element.find('a');
+        const href = $titleEl.attr('href') || '';
+        const title = $titleEl.text().trim() || '';
+        // 提取封面图（搜索结果封面选择器与分类一致）
+        const cover = $element.closest('.thumbnail.group').find('img').attr('src') || '';
+        const vod_remarks = '';
+
+        if (href && title) {
+            cards.push({
+                vod_id: href,
+                vod_name: title,
+                vod_pic: cover,
+                vod_remarks: vod_remarks,
+                ext: { url: appConfig.site + href },
+            });
+        }
+    });
+
     return jsonify({ list: cards });
 }

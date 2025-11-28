@@ -69,44 +69,80 @@ async function getCards(ext) {
     return jsonify({ list: cards });
 }
 
-// 提取播放链接（解析详情页，适配原JSON的play_regex）
+// 提取播放链接（关键优化：从详情页源码解析真实播放接口）
 async function getTracks(ext) {
     ext = argsify(ext);
     let tracks = [];
-    const url = ext.url;
+    const detailUrl = ext.url; // 视频详情页URL（如：https://91pron.men/vod/xxx.html）
 
-    // 从详情页URL提取视频ID（适配 91pron.men/vod/xxx.html 格式）
-    const match = url.match(/https?:\/\/91pron\.men\/vod\/(\w+)\.html/);
-    if (!match || !match[1]) return jsonify({ list: [{ title: '默认分组', tracks }] });
-
-    const videoId = match[1];
-    // 构造播放接口（原JSON play_regex解码为"url":"(https?\[.*\]+)"，暂基于常见格式构造）
-    const playUrl = `https://91pron.men/api/play/${videoId}`;
-
-    tracks.push({
-        name: '播放',
-        pan: '',
-        ext: { url: playUrl },
+    // 1. 先请求视频详情页，获取页面源码
+    const { data: detailData } = await $fetch.get(detailUrl, {
+        headers: { 'User-Agent': UA },
     });
+    const $detail = cheerio.load(detailData);
+
+    // 2. 从详情页提取播放接口（核心：适配91pron.men的真实播放链接规则）
+    let playApiUrl = '';
+    // 方式1：查找页面中隐藏的播放API（常见于script标签或data属性）
+    const playScript = $detail('script:contains("playUrl")').html();
+    if (playScript) {
+        // 匹配类似：playUrl = "https://xxx.com/api/xxx"
+        const apiMatch = playScript.match(/playUrl\s*=\s*"([^"]+)"/);
+        if (apiMatch && apiMatch[1]) {
+            playApiUrl = apiMatch[1];
+        }
+    }
+
+    // 方式2：若方式1失败，查找视频播放器的iframe src（备选方案）
+    if (!playApiUrl) {
+        const iframeSrc = $detail('iframe[src*="play"]').attr('src');
+        playApiUrl = iframeSrc ? (iframeSrc.startsWith('http') ? iframeSrc : appConfig.site + iframeSrc) : '';
+    }
+
+    // 3. 若成功提取到播放接口，添加到播放列表
+    if (playApiUrl) {
+        tracks.push({
+            name: '播放',
+            pan: '',
+            ext: { url: playApiUrl },
+        });
+    }
 
     return jsonify({
         list: [{ title: '默认分组', tracks }],
     });
 }
 
-// 获取真实播放地址
+// 获取真实播放地址（关键优化：解析播放接口的响应）
 async function getPlayinfo(ext) {
     ext = argsify(ext);
-    const url = ext.url;
-    const { data } = await $fetch.get(url, {
-        headers: { 'User-Agent': UA },
-    });
-    const result = argsify(data);
+    const playApiUrl = ext.url; // 从getTracks获取的播放接口URL
 
-    // 提取播放链接（需根据实际API响应调整，此处适配常见JSON格式）
-    const playurl = result.playUrl || result.videoUrl || '';
+    try {
+        const { data } = await $fetch.get(playApiUrl, {
+            headers: { 'User-Agent': UA },
+        });
+        const result = typeof data === 'string' ? JSON.parse(data) : data;
 
-    return jsonify({ urls: [playurl], headers: [{ 'User-Agent': UA }] });
+        // 4. 提取真实播放链接（适配91pron.men常见的响应格式）
+        let playurl = '';
+        // 常见格式1：{ "url": "https://xxx.m3u8" }
+        if (result.url) playurl = result.url;
+        // 常见格式2：{ "video": { "src": "https://xxx.m3u8" } }
+        else if (result.video && result.video.src) playurl = result.video.src;
+        // 常见格式3：直接返回m3u8字符串
+        else if (typeof result === 'string' && result.includes('.m3u8')) playurl = result;
+
+        // 5. 若播放链接是相对路径，拼接完整URL
+        if (playurl && !playurl.startsWith('http')) {
+            playurl = appConfig.site + playurl;
+        }
+
+        return jsonify({ urls: [playurl], headers: [{ 'User-Agent': UA }] });
+    } catch (err) {
+        console.error('获取播放地址失败：', err.message);
+        return jsonify({ urls: [] });
+    }
 }
 
 // 搜索功能

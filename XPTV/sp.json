@@ -1,0 +1,11 @@
+{
+    "sites": [
+        {
+            "name": "肉视频资源",
+            "type": 3,
+            "api": "csp_rsp.js",
+            "ext": "https://raw.githubusercontent.com/yywzl/Surge/refs/heads/main/js/rsp.js"
+        },
+        }
+    ]
+}

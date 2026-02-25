@@ -1,7 +1,7 @@
 {
     "sites": [
         {
-            "name": "肉视频资源",
+            "name": "beeg",
             "type": 3,
             "api": "csp_ces.js",
             "ext": "https://raw.githubusercontent.com/yywzl/Surge/main/js/ces.js"
